@@ -2,7 +2,7 @@
 The simultaneous translation models from the shared task participants are evaluated under a server-client protocol. The participants are required to plug in their own model API in the protocol, and submit a Docker image.
 
 ## Server-Client Protocol
-An server-client protocol that will be used in evaluation. For example, when a *wait-k* model (k=3) translate the English sentence "Alice and Bob are good friends" to Genman sentence "Alice und Bob sind gute Freunde." , the evaluation process is shown in the following figure. 
+A server-client protocol that will be used in evaluation. For example, when a *wait-k* model (k=3) translates the English sentence "Alice and Bob are good friends" to German sentence "Alice und Bob sind gute Freunde." , the evaluation process is shown in the following figure. 
 
 ### Server
 The server code is provided and can be set up locally for development purposes. For example, to evaluate a text simultaneous test set,
@@ -18,7 +18,7 @@ python $user_dir/eval/server.py \
 ```
 The `--score-type` can be either `text` or `speech` to evaluation different tasks.
 
-The state that server sent to client is has the following format
+The state that server sends to the client has the following format
 ```json
 {
   'sent_id': Int,
@@ -99,7 +99,7 @@ class Agent(object):
 Here are the implementations of agents for [text *wait-k* model](../eval/agents/simul_trans_text_agent.py) and [speech *wait-k* model](../eval/agents/simul_trans_speech_agent.py).
 
 ## Quality
-The quality is measured by detokenized BLEU. So make sure that the predicted words sent to server are detokenized. An implementation is can be find [here](../eval/agent.py)
+The quality is measured by detokenized BLEU. So make sure that the predicted words sent to server are detokenized. An implementation can be found [here](../eval/agent.py)
 =======
 Here are the implementations of agents for [text *wait-k* model](../eval/agents/simul_trans_text_agent.py) and [speech *wait-k* model](../eval/agents/simul_trans_speech_agent.py).
 
@@ -109,4 +109,4 @@ The latency metrics are
 * Average Lagging
 * Differentiable Average Lagging
 
-For text, they will be evaluated on detokenized text. For speech, the will be evaluated based one millisecond
+For text, they will be evaluated on detokenized text. For speech, they will be evaluated based on millisecond
