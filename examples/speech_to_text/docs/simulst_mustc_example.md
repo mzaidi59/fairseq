@@ -86,8 +86,8 @@ pip install -e .
 
 simuleval \
     --agent examples/speech_to_text/simultaneous_translation/agents/fairseq_simul_st_agent.py
-    --src-file ${SRC_LIST_OF_AUDIO}
-    --tgt-file ${TGT_FILE}
+    --source ${SRC_LIST_OF_AUDIO}
+    --target ${TGT_FILE}
     --data-bin ${MUSTC_ROOT}/en-de \
     --model-path ${ST_SAVE_DIR}/${CHECKPOINT_FILENAME} \
     --tgt-splitter-type SentencePieceModel \
